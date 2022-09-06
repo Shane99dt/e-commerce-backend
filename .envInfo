@@ -1,4 +1,4 @@
-DB_PORT = port
+PORT = port
 DB_HOST = hostName
 DB_USERNAME = username
 DB_PASSWORD = password

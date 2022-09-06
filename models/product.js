@@ -6,6 +6,12 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false
     },
+    productOwner: {
+      type: DataTypes.STRING
+    },
+    productImage: {
+      type: DataTypes.TEXT
+    },
     description: {
       type: DataTypes.TEXT
     },
