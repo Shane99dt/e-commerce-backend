@@ -3,7 +3,7 @@ const app = express()
 
 
 app.get('/', (req, res) => {
-  console.log('products get')
+  res.json('products get')
 })
 
 
