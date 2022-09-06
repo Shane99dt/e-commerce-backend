@@ -1,5 +1,6 @@
 const express = require("express")
 const app = express()
+const { categoryExists } = require("../middlewares/categoriesMW")
 const { Category } = require("../models")
 const { Product } = require("../models")
 
@@ -14,24 +15,8 @@ app.get("/", async (req, res) => {
 })
 
 // Get the category by his id
-app.get("/:id", async (req, res) => {
-  const { id } = req.params
-
-  try {
-    const category = await Category.findOne({
-      where: {
-        id,
-      },
-    })
-
-    if (category) {
-      req.status(201).json(category)
-    } else {
-      res.status(404).json("Category not found")
-    }
-  } catch (e) {
-    res.status(500).json("Internal server error")
-  }
+app.get("/:id", categoryExists, async (req, res) => {
+  res.status(201).json(req.category)
 })
 
 // Get all product of a category
