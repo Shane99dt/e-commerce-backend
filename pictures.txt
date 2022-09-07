@@ -1,5 +1,4 @@
 BE FEARLESS="https://postimg.cc/m1HksmWD"
-
 FLY HIGHER="https://postimg.cc/BtLXHnP0"
 
 DUNE="https://postimg.cc/z3s3jYTR"
@@ -8,8 +7,10 @@ SKULL="https://postimg.cc/9ry0ggBg"
 
 AUTUMN="https://postimg.cc/87H5NF9h"
 
-TIME="https://postimg.cc/NyCj23gF"
 
 MOUNTAIN="https://postimg.cc/zy5Bswtz"
 
 FLOWER="https://postimg.cc/cKLJHxGP"
+
+
+insert into products(productName, productOwner, productImage, description, price) values ("be fearless","thomas middleware","https://postimg.cc/m1HksmWD","text \'be fearless\' in black background",2100),("fly higher","wadé momo","https://postimg.cc/BtLXHnP0","text \'aim higher fly higher\' in white background",2500),("dune","walid bell","https://postimg.cc/z3s3jYTR","a picture of multicolors, looks like a dune",4500),("bull skull","shane","https://postimg.cc/9ry0ggBg","a picture of a bull skull in white background with black frame",5000),("seasons","fantastic 4","https://postimg.cc/87H5NF9h","a picture of 4 seasons in same frame",11000),("mountain","benoit paquier","https://postimg.cc/zy5Bswtz","a beautiful mountain photographed by \'benoit\'",9000),("flower","julie desvaux","https://postimg.cc/cKLJHxGP","a beautiful picture of a flower",4900);
