@@ -4,20 +4,28 @@ module.exports = (sequelize) => {
   const Product = sequelize.define("Product", {
     productName: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     productOwner: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
     },
     productImage: {
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
     },
     description: {
-      type: DataTypes.TEXT
+      type: DataTypes.TEXT,
     },
     price: {
-      type: DataTypes.INTEGER
-    }
+      type: DataTypes.INTEGER,
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      defaultValue: sequelize.literal("CURRENT_TIMESTAMP"),
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      defaultValue: sequelize.literal("CURRENT_TIMESTAMP"),
+    },
   })
   return Product
 }
