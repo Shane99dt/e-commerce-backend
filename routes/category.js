@@ -24,7 +24,14 @@ app.get("/:id/products", categoryExists, async (req, res) => {
   const { id } = req.params
 
   try {
-    const products = await Product.findAll({
+    let priceOrder = req.query.price
+    let order = {}
+    if (priceOrder) {
+      order = {
+        order: [["price", priceOrder]],
+      }
+    }
+    const products = await Product.findAll(order, {
       where: {
         id,
       },
