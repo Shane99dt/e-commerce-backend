@@ -8,11 +8,11 @@ module.exports = (sequelize) => {
     },
     createdAt: {
       type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
+      defaultValue: sequelize.literal("CURRENT_TIMESTAMP"),
     },
     updatedAt: {
       type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
+      defaultValue: sequelize.literal("CURRENT_TIMESTAMP"),
     },
   })
   return Category
