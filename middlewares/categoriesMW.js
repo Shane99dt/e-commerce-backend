@@ -1,9 +1,12 @@
-const { Category } = require("../models")
+const { Category, Product } = require("../models")
 
 const categoryExists = async (req, res, next) => {
   const { id } = req.params
   try {
-    const category = await Category.findOne({ where: { id } })
+    const category = await Category.findOne({
+      where: { id },
+      include: [Product],
+    })
     if (category) {
       req.category = category
       next()
