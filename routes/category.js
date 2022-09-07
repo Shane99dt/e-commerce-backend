@@ -1,8 +1,7 @@
 const express = require("express")
 const app = express()
 const { categoryExists } = require("../middlewares/categoriesMW")
-const { Category } = require("../models")
-const { Product } = require("../models")
+const { Category, Product } = require("../models")
 
 // Get all categories
 app.get("/", async (req, res) => {

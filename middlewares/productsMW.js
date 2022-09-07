@@ -1,9 +1,9 @@
 const { Product } = require("../models")
 
-const productExists = (req, res, next) => {
+const productExists = async (req, res, next) => {
   const { id } = req.params
   try {
-    const product = Product.findOne({ where: { id } })
+    const product = await Product.findOne({ where: { id } })
     if (product) {
       req.product = product
       next()
