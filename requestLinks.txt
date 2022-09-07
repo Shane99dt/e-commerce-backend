@@ -1,0 +1,31 @@
+Request links
+
+recuperer toutes les produits
+https://e-commerce-fantastic4.herokuapp.com/products
+
+trier avec le prix desc
+https://e-commerce-fantastic4.herokuapp.com/products?price=DESC
+
+trier avec le prix ASC
+https://e-commerce-fantastic4.herokuapp.com/products?price=ASC
+
+recuperer un produit
+https://e-commerce-fantastic4.herokuapp.com/products/:id
+
+
+
+
+recuperer toutes les categories
+https://e-commerce-fantastic4.herokuapp.com/category
+
+recuperer tous les produits d'une categorie
+https://e-commerce-fantastic4.herokuapp.com/category/:categoryId/products
+
+trier avec le prix desc
+https://e-commerce-fantastic4.herokuapp.com/category/:categoryId/products?price=DESC
+
+recuperer tous les produits d'une categorie
+https://e-commerce-fantastic4.herokuapp.com/category/:categoryId/products?price=ASC
+
+recuperer une categorie
+https://e-commerce-fantastic4.herokuapp.com/category/:categoryId
