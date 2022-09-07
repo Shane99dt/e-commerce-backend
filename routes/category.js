@@ -20,7 +20,7 @@ app.get("/:id", categoryExists, async (req, res) => {
 })
 
 // Get all product of a category
-app.get("/:id/products", async (req, res) => {
+app.get("/:id/products", categoryExists, async (req, res) => {
   const { id } = req.params
 
   try {

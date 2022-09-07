@@ -2,7 +2,7 @@ require("dotenv").config()
 const express = require("express")
 const app = express()
 const { PORT } = process.env
-const productRoutes = require("./routes/product")
+const productRoutes = require("./routes/products")
 const categoryRoutes = require("./routes/category")
 
 require("./models/index")
