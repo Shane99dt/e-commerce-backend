@@ -1,9 +1,10 @@
 const express = require("express")
 const { Op } = require("sequelize")
+const { orderProductsExists } = require("../middlewares/ordersMW")
 const app = express()
 const { Order, Product } = require("../models")
 
-app.post("/", async (req, res) => {
+app.post("/", orderProductsExists, async (req, res) => {
   try {
     const order = await Order.create(req.body)
     const products = await Product.findAll({
