@@ -10,9 +10,7 @@ app.get("/", async (req, res) => {
     let order = {}
 
     if (priceOrder) {
-      order = {
-        order: [["price", priceOrder]],
-      }
+      order = { order: [["price", priceOrder]] }
     }
     const products = await Product.findAll(order)
     res.status(201).json(products)
