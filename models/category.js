@@ -1,4 +1,3 @@
-const { DATE } = require("sequelize")
 const { DataTypes } = require("sequelize")
 
 module.exports = (sequelize) => {
