@@ -5,6 +5,10 @@ module.exports = (sequelize) => {
     total: {
       type: DataTypes.INTEGER,
     },
+    customerName: {
+      type: DataTypes.STRING,
+      defaultValue: "benoit",
+    },
     createdAt: {
       type: DataTypes.DATE,
       defaultValue: sequelize.literal("CURRENT_TIMESTAMP"),

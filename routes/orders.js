@@ -1,19 +1,28 @@
 const express = require("express")
+const { Op } = require("sequelize")
 const app = express()
-const { Order } = require("../models")
+const { Order, Product } = require("../models")
 
 app.post("/", async (req, res) => {
   try {
     const order = await Order.create(req.body)
+    const products = await Product.findAll({
+      where: {
+        id: { [Op.in]: req.body.productsIds },
+      },
+    })
+    order.setProducts(products)
+    await order.save()
     res.json(order)
   } catch (e) {
     res.status(500).json("Internal server error")
+    console.log(e)
   }
 })
 
 app.get("/", async (req, res) => {
   try {
-    const orders = await Order.findAll()
+    const orders = await Order.findAll({ include: Product })
     res.json(orders)
   } catch (e) {
     res.status(500).json("Internal server error")

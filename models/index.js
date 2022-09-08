@@ -21,12 +21,20 @@ connectDb()
 const Product = require("./product")(sequelize)
 const Order = require("./order")(sequelize)
 const Category = require("./category")(sequelize)
+const ProductsOrders = require("./productsOrders")(sequelize)
+
 Product.belongsToMany(Order, {
   through: "products_orders",
 })
 Order.belongsToMany(Product, {
   through: "products_orders",
 })
+// Product.belongsToMany(Order, {
+//   through: ProductsOrders,
+// })
+// Order.belongsToMany(Product, {
+//   through: ProductsOrders,
+// })
 Category.belongsToMany(Product, {
   through: "products_categories",
 })
