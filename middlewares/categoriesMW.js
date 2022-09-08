@@ -4,14 +4,25 @@ const categoryExists = async (req, res, next) => {
   const { id } = req.params
   try {
     let priceOrder = req.query.price
-    const category = await Category.findOne({
-      where: { id },
-      include: [Product],
-      order: [[{ model: Product }, "price", priceOrder]],
-    })
-    if (category) {
-      req.category = category
-      next()
+    if (priceOrder) {
+      const category = await Category.findOne({
+        where: { id },
+        include: [Product],
+        order: [[{ model: Product }, "price", priceOrder]],
+      })
+      if (category) {
+        req.category = category
+        next()
+      }
+    } else {
+      const category = await Category.findOne({
+        where: { id },
+        include: [Product],
+      })
+      if (category) {
+        req.category = category
+        next()
+      }
     }
   } catch (e) {
     res.status(500).json("Internal server error")
